@@ -5,14 +5,14 @@ import Loading from './LoadingComponent.js';
 
 const fineRate=1;
 
-const allowedDays=30;
+const allowedDays=10;
 function RenderIssue ({issue,i}) {
     const dates=[];
     const today= new Date();
     dates.push(today);
     const issueDate=new Date(Date.parse(issue.createdAt));
     const deadline = new Date( Date.parse(issue.createdAt));
-    deadline.setDate(deadline.getDate()+30);
+    deadline.setDate(deadline.getDate()+10);
     dates.push(deadline);
     const returnDate=issue.returned?new Date(Date.parse((issue.updatedAt))):(new Date(Math.min.apply(null,dates)));
     let fine=0;
@@ -53,11 +53,11 @@ function RenderIssue ({issue,i}) {
                :('Not returned yet')
                 }
             </td>
-            <td>
+            {/* <td>
                 {
                     fine
                 }
-            </td>
+            </td> */}
             </React.Fragment>
        );
 }
@@ -138,7 +138,7 @@ render(){
             <th>Issue Date</th>
             <th>Return Deadline</th>
             <th>Return status</th> 
-            <th>Fine (in Rs.)</th> 
+            {/* <th>Fine (in Rs.)</th>  */}
            </tr>
         </thead>
         <tbody>

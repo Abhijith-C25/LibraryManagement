@@ -5,14 +5,14 @@ import Loading from './LoadingComponent.js';
 
 const fineRate=1;
 let totalFine=0;
-const allowedDays=30;
+const allowedDays=10;
 function RenderIssue ({issue,i,returnBook}) {
     const dates=[];
     const today= new Date();
     dates.push(today);
     const issueDate=new Date(Date.parse(issue.createdAt));
     const deadline = new Date( Date.parse(issue.createdAt));
-    deadline.setDate(deadline.getDate()+30);
+    deadline.setDate(deadline.getDate()+10);
     dates.push(deadline);
     const returnDate=issue.returned?new Date(Date.parse((issue.updatedAt))):(new Date(Math.min.apply(null,dates)));
     let fine=0;
@@ -48,11 +48,11 @@ function RenderIssue ({issue,i,returnBook}) {
             <td>
                 {new Intl.DateTimeFormat('en-US',{year: 'numeric', month: 'short', day: '2-digit'}).format(deadline)}
             </td>
-            <td>
+            {/* <td>
                 {
                     fine
                 }
-            </td>
+            </td> */}
             <td>
             <Button color="info" onClick={()=>{
                returnBook(issue._id); 
@@ -139,7 +139,7 @@ render(){
             <th>ISBN number</th>
             <th>Issue Date</th>
             <th>Return Deadline</th>
-            <th>Fine (in Rs.)</th>
+            {/* <th>Fine (in Rs.)</th> */}
             <th>Return book</th> 
            </tr>
         </thead>
@@ -148,7 +148,7 @@ render(){
         </tbody>
         </Table>
             <br/>
-            <h6> Total Fine due (if all pending books are returned today) : Rs. {totalFine} </h6>
+            {/* <h6> Total Fine due (if all pending books are returned today) : Rs. {totalFine} </h6> */}
             <br/>
             </div>
             </div>

@@ -10,7 +10,7 @@ class Footer extends Component {
 
 render(){
     return(
-                    <p className="footer" align="center">© Copyright 2023</p>
+                    <p className="footer" align="center">© Technical Assignment</p>
           );
 }
 
