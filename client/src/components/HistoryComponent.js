@@ -129,16 +129,12 @@ render(){
             <th>Issue Date</th>
             <th>Return Deadline</th>
             <th>Return status</th> 
-            {/* <th>Fine (in Rs.)</th>  */}
-           </tr>
+          </tr>
         </thead>
         <tbody>
             {list}
         </tbody>
         </Table>
-            <br/>
-            {/* <h6> Total Fine due (if all pending books are returned today) : Rs. {totalFine} </h6> */}
-            <br/>
             </div>
             </div>
             </div>

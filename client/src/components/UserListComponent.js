@@ -18,9 +18,6 @@ function RenderUser ({user,i}) {
             {user.roll}
             </td>
             <td>
-            {user.username}
-            </td>
-            <td>
             {user.email}
             </td>
             </React.Fragment>
@@ -97,8 +94,7 @@ render(){
             <th>S.No.</th>
             <th>Name of {this.props.users[0].admin?' admin': ' student'}</th>
             <th>{this.props.users[0].admin?' Admin Id': ' Roll No.'}</th>
-            <th>Username</th>
-            <th>Email</th>
+         <th>Email</th>
             </tr>
         </thead>
         <tbody>

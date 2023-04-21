@@ -147,9 +147,6 @@ render(){
             {list}
         </tbody>
         </Table>
-            <br/>
-            {/* <h6> Total Fine due (if all pending books are returned today) : Rs. {totalFine} </h6> */}
-            <br/>
             </div>
             </div>
             </div>

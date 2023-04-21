@@ -164,7 +164,7 @@ render(){
 
                             </Control.select>
                             </Col>
-                            {/* <Col>
+                            <Col>
                             <Label htmlFor="floor">Floor </Label>
                             <Control.select defaultValue={0} model=".floor" id="floor" 
                             className="form-control" >
@@ -174,10 +174,10 @@ render(){
                               <option>6</option> <option>7</option>
                               <option>8</option> 
                             </Control.select>
-                            </Col> */}
+                            </Col>
                         </Row>
                         
-                        {/* <Row className="form-group text-center justify-content-center">
+                        <Row className="form-group text-center justify-content-center">
                                 <Label htmlFor="shelf" md={3}> Shelf</Label>
                                 <Col md={6}>
                                     <Control.text model=".shelf" id="shelf" name="shelf"
@@ -199,7 +199,7 @@ render(){
                                         }}
                                      />
                                 </Col>
-                            </Row> */}
+                            </Row>
 
                      
                         <Row className="form-group">
