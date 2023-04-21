@@ -1,0 +1,12 @@
+.nav-link {
+    color: yellow !important;
+}
+
+.bg-dark {
+    color: #000;
+}
+
+.modal-content {
+    border-radius: 10px !important;
+    background: yellow !important;
+}

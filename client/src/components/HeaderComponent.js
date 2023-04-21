@@ -24,6 +24,8 @@ import {
 import { NavLink, Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 
+import './css/header.css'
+
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -36,7 +38,7 @@ function Registerer(props) {
     return (
       <React.Fragment>
         &nbsp;
-        <Button color="primary" outline onClick={props.toggleRegister}>
+        <Button style={{ color: 'yellow'}} outline onClick={props.toggleRegister}>
           <span className="fa fa-user-plus fa-lg"></span> Register
         </Button>
       </React.Fragment>
@@ -99,13 +101,13 @@ class Header extends Component {
         <Navbar color="dark" dark expand="xl" fixed="top">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav}></NavbarToggler>
-            <NavbarBrand className="mr-auto text-primary" href="/home">
-              Central Library
+            <NavbarBrand className="mr-auto " href="/home">
+              <b>University Library</b>
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar>
                 <NavItem className="ml-2" onClick={this.toggleNav}>
-                  <NavLink className="nav-link text-primary" to="/home">
+                  <NavLink className="nav-link " to="/home">
                     <span className="fa fa-home fa-lg" /> Home
                   </NavLink>
                 </NavItem>
@@ -115,8 +117,8 @@ class Header extends Component {
                       isOpen={this.state.dropdownOpen}
                       toggle={this.toggle}
                     >
-                      <DropdownToggle color="Primary">
-                        <div className="text-primary">
+                      <DropdownToggle color="Primary" style={{ color: 'yellow'}}>
+                        <div className="">
                           <span className="fa fa-book fa-lg" /> Books &nbsp;{" "}
                           <i
                             className="fa fa-caret-down fa-sm"
@@ -145,20 +147,20 @@ class Header extends Component {
                   </NavItem>
                 ) : (
                   <NavItem className="ml-2" onClick={this.toggleNav}>
-                    <NavLink className="nav-link text-primary" to="/books">
+                    <NavLink className="nav-link " to="/books">
                       <span className="fa fa-book fa-lg" /> Books
                     </NavLink>
                   </NavItem>
                 )}
 
                 <NavItem className="ml-2" onClick={this.toggleNav}>
-                  <NavLink className="nav-link text-primary" to="/search">
+                  <NavLink className="nav-link " to="/search">
                     <span className="fa fa-search fa-lg" /> Search
                   </NavLink>
                 </NavItem>
                 {this.props.auth.isAuthenticated ? (
                   <NavItem onClick={this.toggleNav} className="ml-2">
-                    {/* <NavLink className="nav-link text-primary" to="/profile">
+                    {/* <NavLink className="nav-link " to="/profile">
                       <span className="fa fa-user-circle-o fa-lg" /> My Profile
                     </NavLink> */}
                     <Registerer
@@ -174,7 +176,7 @@ class Header extends Component {
                 {this.props.auth.isAuthenticated &&
                 !this.props.auth.userinfo.admin ? (
                   <NavItem onClick={this.toggleNav} className="ml-2">
-                    <NavLink className="nav-link text-primary" to="/history">
+                    <NavLink className="nav-link " to="/history">
                       <span className="fa fa-history" /> Issue history
                     </NavLink>
                   </NavItem>
@@ -185,17 +187,17 @@ class Header extends Component {
                 this.props.auth.userinfo.admin ? (
                   <React.Fragment>
                     {/* <NavItem onClick={this.toggleNav} className="ml-2">
-                      <NavLink className="nav-link text-primary" to="/issue">
+                      <NavLink className="nav-link " to="/issue">
                         <span className="fa fa-plus-square" /> Issue Book
                       </NavLink>
                     </NavItem> */}
                     <NavItem onClick={this.toggleNav} className="ml-2">
-                      <NavLink className="nav-link text-primary" to="/return">
+                      <NavLink className="nav-link " to="/return">
                         <span className="fa fa-list-ul" /> Return Book
                       </NavLink>
                     </NavItem>
                     <NavItem onClick={this.toggleNav} className="ml-2">
-                      <NavLink className="nav-link text-primary" to="/stats">
+                      <NavLink className="nav-link " to="/stats">
                         <span className="fa fa-info-circle" /> Stats
                       </NavLink>
                     </NavItem>
@@ -207,7 +209,7 @@ class Header extends Component {
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   {!this.props.auth.isAuthenticated ? (
-                    <Button outline color="primary" onClick={this.toggleModal}>
+                    <Button outline style={{color: 'yellow'}} onClick={this.toggleModal}>
                       <span className="fa fa-sign-in fa-lg"></span> Login
                       {this.props.auth.isLoading ? (
                         <span className="fa fa-spinner fa-pulse fa-fw"></span>
@@ -220,7 +222,7 @@ class Header extends Component {
                       </div>
                       <Button
                         outline
-                        color="primary"
+                        style={{ color: 'yellow'}}
                         onClick={this.handleLogout}
                       >
                         <span className="fa fa-sign-out fa-lg"></span> Logout
@@ -238,10 +240,12 @@ class Header extends Component {
         <Modal
           isOpen={!this.props.auth.isAuthenticated && this.state.isModalOpen}
           toggle={this.toggleModal}
+          style={{ background: 'yellow', borderRadius: 10}}
+
         >
-          <ModalHeader toggle={this.toggleModal}>Sign In</ModalHeader>
-          <ModalBody>
-            <Form onSubmit={this.handleLogin}>
+          <ModalHeader toggle={this.toggleModal}  style={{ background: 'yellow'}}>Sign In</ModalHeader>
+          <ModalBody  style={{ background: 'yellow',  borderRadius: 10}}>
+            <Form onSubmit={this.handleLogin} style={{ background: 'yellow',  borderRadius: 10}}>
               <FormGroup>
                 <Label htmlFor="username">Username</Label>
                 <Input

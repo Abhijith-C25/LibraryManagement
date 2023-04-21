@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom/'
-function Home() {
+import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 
-    
+import './css/Auth.css'
+
+function Login() {
+
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
 
@@ -22,17 +24,16 @@ function Home() {
         }    
     }
 
-  return (
-        <div className="container mt-4 home text-center align-self-center">
-       <div className='loginSignin'>
-            {/* <div className='ls__left'>
+    return (
+        <div className='loginSignin'>
+            <div className='ls__left'>
                 <h3>Inspiring Destinations Within Your Reach</h3>
-            </div> */}
+            </div>
             <div className='ls__right'>
                 <div className='ls__right_container'>
                     <form className='loginSignin__form' onSubmit={handleOnClick}>
-                        <h1>Welcome to University Library</h1>
-                        {/* <div className='ls_input_row'>
+                        <h1>Login</h1>
+                        <div className='ls_input_row'>
                             <div className='ls_input_container'>
                                 <label>Email</label>
                                 <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' className='ls_input'/>
@@ -54,15 +55,13 @@ function Home() {
                         <div className='ls_input_submit'>
                             <button type='submit'>Login</button>
                             <p>Don't have an account? <Link to='/signin'>Sign Up</Link></p>
-                        </div> */}
+                        </div>
 
                     </form>
                 </div>
             </div>
         </div>
-            </div>
-        );
-
+    )
 }
 
-export default Home
+export default Login
